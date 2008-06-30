@@ -10,6 +10,7 @@ class Engine
   
   def sweep(path)
 
+    @sweep_path = path
     @sweepers_by_path = {}
     @sweepers_by_interval = []
 
@@ -36,12 +37,15 @@ class Engine
     Dir[File.join(path, '*')].each do |file|
       next if @sweepers_by_path[file]
       atime = File.new(file).atime
+      file_sweeper = @sweep_path
       @sweepers_by_interval.each do |sweeper, interval|
         if (Time.now - interval) > atime
-          File.rename(file, File.join(sweeper, File.basename(file)))
+          file_sweeper = sweeper
           break
         end
       end
+      new_path = File.join(file_sweeper, File.basename(file))
+      File.rename(file, new_path) unless file == new_path
     end
   
   end
