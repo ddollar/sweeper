@@ -1,9 +1,9 @@
-@config.name     = "generic"
+@config.name     = "sweeper"
 
 require "lib/#{@config.name}"
 
-@config.version  = Generic.version
-@config.summary  = "Summary Here"
+@config.version  = Sweeper.version
+@config.summary  = "Sweep a directory into subdirectories by age"
 @config.homepage = "http://peervoice.com/software/#{@config.name}"
 
 @config.author_name  = "David Dollar"
