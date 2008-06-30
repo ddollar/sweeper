@@ -1,0 +1,20 @@
+#!/usr/bin/env ruby -wKU
+
+require File.expand_path(File.join(File.dirname(__FILE__), '..', 'lib', 'sweeper'))
+
+if ARGV.length < 1 || !File.exists?(ARGV.first)
+  puts "usage: sweep <path>"
+  exit 1
+end
+
+SWEEP_PATH = ARGV.first
+
+SWEEPERS = {
+  '_Day'   => 1.day,
+  '_Week'  => 1.week,
+  '_Month' => 1.month,
+  '_Trash' => 2.months
+}
+
+sweeper = Sweeper::Engine.new(SWEEPERS)
+sweeper.sweep(SWEEP_PATH)

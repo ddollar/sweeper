@@ -1,8 +1,8 @@
 # Equivalent to a header guard in C/C++
 # Used to prevent the class/module from being loaded more than once
-unless defined? Generic
+unless defined? Sweeper
 
-module Generic
+module Sweeper
 
   # :stopdoc:
   VERSION = '0.0.1'
@@ -44,6 +44,6 @@ module Generic
 
 end
 
-Generic.require_all_libs_relative_to __FILE__
+Sweeper.require_all_libs_relative_to __FILE__
 
 end  # unless defined?
