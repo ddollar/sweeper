@@ -4,7 +4,7 @@ spec = Gem::Specification.new do |s|
   s.executables = [ 'sweep' ]
   
   s.name     = "sweeper"
-  s.version  = "0.1.0"
+  s.version  = "0.1.1"
   s.summary  = "Sweep a directory into subdirectories by age"
   s.homepage = "http://peervoice.com/software/sweeper"
   
