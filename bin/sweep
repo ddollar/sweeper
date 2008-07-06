@@ -11,7 +11,6 @@ SWEEP_PATH = ARGV.first
 
 SWEEPERS = {
   '_Day'   => 1.day,
-  '_Week'  => 1.week,
   '_Month' => 1.month,
   '_Trash' => 2.months
 }
